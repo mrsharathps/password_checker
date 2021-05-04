@@ -4,7 +4,7 @@ import hashlib
 import sys
 
 def request_api_data(query_char):
-    url = 'https://api.pwnedpasswords.com/range/' + query_char  # Just keep first 5 hash characters by doing so users will not be exosing their password
+    url = 'https://api.pwnedpasswords.com/range/' + query_char  # Just keep first 5 hash characters by doing so users will not be exposing their password
     response = requests.get(url)
     if response.status_code!=200:
         raise RuntimeError(f'fetching error {response.status_code}, Check the api and try again')
