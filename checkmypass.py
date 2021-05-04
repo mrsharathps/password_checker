@@ -3,7 +3,7 @@ import hashlib
 import sys
 
 def request_api_data(query_char):
-    url = 'https://api.pwnedpasswords.com/range/' + query_char  # Just keep first 5 hash characters by doing so users will not be exposing their password
+    url = 'https://api.pwnedpasswords.com/range/' + query_char
     response = requests.get(url)
     if response.status_code!=200:
         raise RuntimeError(f'fetching error {response.status_code}, Check the api and try again')
@@ -30,7 +30,7 @@ def main(args):
             print(f'Gosh!{password} was found {count} number of times and should change it')
         else:
             print(f'{password} was not leaked and carry on!!!!!')
-    return 'Completed'
+    return 'Done'
 
 if __name__=='__main__':
     sys.exit(main(sys.argv[1:]))
